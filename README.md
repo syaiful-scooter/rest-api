@@ -1,42 +1,31 @@
-# [Service master data] springboot
+# Master Data Management API
 
-## 📌 Deskripsi Singkat [Backend]
-"Jika API Gateway adalah resepsionis hotel, maka Service Registry adalah Buku Tamu atau Database Alamat yang selalu terupdate secara otomatis.
+Project ini adalah layanan **RESTful API** berbasis Spring Boot untuk mengelola data master (seperti Users, Products, atau Categories). Project ini dirancang untuk menjadi bagian dari arsitektur microservices yang terhubung ke API Gateway.
 
-Dalam arsitektur microservices, alamat IP dan port server sering berubah-ubah (terutama jika menggunakan Docker atau Kubernetes di mana kontainer bisa mati dan menyala kembali dengan IP baru). Di sinilah Service Registry berperan."
+## 🚀 Fitur
+* **CRUD Operations**: Create, Read, Update, Delete data master.
+* **Validation**: Validasi input menggunakan Spring Boot Starter Validation.
+* **Actuator**: Monitoring kesehatan aplikasi.
+* **Service Discovery**: Siap diintegrasikan dengan Eureka/Consul.
 
-## 🚀 Fitur Utama
-- **[Fitur 1]:** Pendaftaran Otomatis (Service Registration)
-Setiap kali sebuah microservice (seperti transaction-service) menyala, ia akan langsung "melapor" ke Service Registry:
+## 🛠️ Tech Stack
+* **Java 17** (atau versi terbaru)
+* **Spring Boot 3.x**
+* **Spring Data JPA** (Database ORM)
+* **PostgreSQL/MySQL** (Database)
+* **Lombok** (Boilerplate code reduction)
+* **Maven** (Dependency Manager)
 
-"Halo, saya Transaction Service, alamat saya ada di 192.168.1.50 port 9092. Tolong dicatat!"
+## 📋 Prasyarat
+Sebelum menjalankan project, pastikan Anda sudah menginstal:
+* JDK 17 atau lebih baru
+* Maven 3.6+
+* Database (PostgreSQL/MySQL)
 
-- **[Fitur 2]:** Penemuan Layanan (Service Discovery)
-Ketika API Gateway ingin meneruskan data ke transaction-service, ia tidak perlu menuliskan alamat IP secara manual (hardcoded). Gateway cukup bertanya ke Service Registry:
-
-"Di mana alamat Transaction Service sekarang?" Service Registry menjawab: "Dia ada di 192.168.1.50:9092."
-
-- **[Fitur 3]:** Pemeriksaan Kesehatan (Health Checking)
-Service Registry secara berkala akan mengecek: "Hei, kamu masih hidup?" ke setiap service yang terdaftar.
-
-Jika sebuah service tidak merespons (mati), Service Registry akan menghapus alamat tersebut dari daftar.
-
-Hasilnya, Gateway tidak akan mengirim trafik ke server yang sedang rusak.
-
-- **[Fitur 4]:** Mendukung Auto-Scaling
-Jika trafik membludak dan kamu menjalankan 5 instans transaction-service sekaligus, kelimanya akan terdaftar di Service Registry. Gateway kemudian bisa meminta kelima alamat tersebut untuk melakukan pembagian beban (load balancing).
-
-
-## 🛠️ Depedency Properties
-Daftar teknologi yang digunakan dalam proyek ini:
-- [spring-cloud-starter-netflix-eureka-server]
-- [spring-boot-starter-actuator]
-- [lombok]
-- [spring-boot-starter-test]
-
-
-## Ilustrasi Arsitektur
-
-![Service Registry Architecture](https://github.com/syaiful-scooter/api-gateway/blob/main/gateway_diakses.jpg)
-
-Dibuat dengan ❤️ oleh syaifulscooter
+## ⚙️ Konfigurasi Database
+Ubah file `src/main/resources/application.properties`:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/db_master
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
