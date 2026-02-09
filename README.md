@@ -12,20 +12,34 @@ Project ini adalah layanan **RESTful API** berbasis Spring Boot untuk mengelola 
 * **Java 17** (atau versi terbaru)
 * **Spring Boot 3.x**
 * **Spring Data JPA** (Database ORM)
-* **PostgreSQL/MySQL** (Database)
+* **MySQL** (Database)
 * **Lombok** (Boilerplate code reduction)
 * **Maven** (Dependency Manager)
-
-## 📋 Prasyarat
-Sebelum menjalankan project, pastikan Anda sudah menginstal:
-* JDK 17 atau lebih baru
-* Maven 3.6+
-* Database (PostgreSQL/MySQL)
 
 ## ⚙️ Konfigurasi Database
 Ubah file `src/main/resources/application.properties`:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/db_master
+spring.application.name=rest-api
+server.port=9091
+
+#mysql
+spring.datasource.url=jdbc:mysql://localhost:3306/db_spring_boot
 spring.datasource.username=root
-spring.datasource.password=root
+spring.datasource.password=
+
+#hibernate
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
+
+#logging
+logging.level.org.hibernate=DEBUG
+
+#eureka
+eureka.client.service-url.defaultZone=http://localhost:9095/eureka
+
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+#ACTUATOR
+management.endpoints.web.exposure.include=*
