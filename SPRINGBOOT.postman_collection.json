@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "34eee765-9653-4557-b583-e5b5a70ab546",
+		"name": "SPRINGBOOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10198370"
+	},
+	"item": [
+		{
+			"name": "Api-Gateway",
+			"item": [
+				{
+					"name": "WebClient",
+					"item": [
+						{
+							"name": "ProdukStatus",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiGTwayDt}}/produk_status",
+									"host": [
+										"{{ApiGTwayDt}}"
+									],
+									"path": [
+										"produk_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ProdukByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiGTwayDt}}/produk/4",
+									"host": [
+										"{{ApiGTwayDt}}"
+									],
+									"path": [
+										"produk",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Topup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": 8,\r\n    \"amount\": 250000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiGTway}}/topup",
+							"host": [
+								"{{ApiGTway}}"
+							],
+							"path": [
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": 8,\r\n    \"product_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiGTway}}/buy",
+							"host": [
+								"{{ApiGTway}}"
+							],
+							"path": [
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CekNum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiGTway}}/cek/08561829244",
+							"host": [
+								"{{ApiGTway}}"
+							],
+							"path": [
+								"cek",
+								"08561829244"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiGTway}}/history/1?from=2025-07-20T17:43:32&to=2025-07-23T15:28:34",
+							"host": [
+								"{{ApiGTway}}"
+							],
+							"path": [
+								"history",
+								"1"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2025-07-20T17:43:32"
+								},
+								{
+									"key": "to",
+									"value": "2025-07-23T15:28:34"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Gateway to transactional services"
+		},
+		{
+			"name": "Rest-API",
+			"item": [
+				{
+					"name": "Save Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kode_produk\": \"ThreeK200\",\r\n    \"operator\": \"3\",\r\n    \"tipe\": \"Kouta\",\r\n    \"nama\": \"Kuota 3 200GB masa aktif 2 bulan\",\r\n    \"harga\": 255000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"kode_produk\": \"tp10\",\r\n    \"operator\": \"telkomsel\",\r\n    \"tipe\": \"pulsa\",\r\n    \"nama\": \"pulsa telkomsel 10ribu, berlaku 7hari\",\r\n    \"harga\": \"13000.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kodeproduk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk/kodeproduk/ThreeK200",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk",
+								"kodeproduk",
+								"ThreeK200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "masterCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9091}}/master/customer/1",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"master",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "masterProdukById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk/id/1",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MasterProdukByOp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk/indo",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk",
+								"indo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllMasterProduk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9091}}/v1/master/produk/data",
+							"host": [
+								"{{L9091}}"
+							],
+							"path": [
+								"v1",
+								"master",
+								"produk",
+								"data"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Service to master data"
+		},
+		{
+			"name": "Transaction-API",
+			"item": [
+				{
+					"name": "WebClient",
+					"item": [
+						{
+							"name": "getAllProducts",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_id\": 2,\r\n    \"amount\": 100000\r\n}"
+								},
+								"url": {
+									"raw": "{{L9092}}/v1/master/produk",
+									"host": [
+										"{{L9092}}"
+									],
+									"path": [
+										"v1",
+										"master",
+										"produk"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllProducts_status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_id\": 2,\r\n    \"amount\": 100000\r\n}"
+								},
+								"url": {
+									"raw": "{{L9092}}/v1/master/produk_status",
+									"host": [
+										"{{L9092}}"
+									],
+									"path": [
+										"v1",
+										"master",
+										"produk_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProductsById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_id\": 2,\r\n    \"amount\": 100000\r\n}"
+								},
+								"url": {
+									"raw": "{{L9092}}/v1/master/produk/3",
+									"host": [
+										"{{L9092}}"
+									],
+									"path": [
+										"v1",
+										"master",
+										"produk",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "topup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": 2,\r\n    \"amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{L9092}}/v1/transaction/topup",
+							"host": [
+								"{{L9092}}"
+							],
+							"path": [
+								"v1",
+								"transaction",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cek-number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9092}}/v1/transaction/cek/081314381200",
+							"host": [
+								"{{L9092}}"
+							],
+							"path": [
+								"v1",
+								"transaction",
+								"cek",
+								"081314381200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": 1,\r\n    \"product_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{L9092}}/v1/transaction/buy",
+							"host": [
+								"{{L9092}}"
+							],
+							"path": [
+								"v1",
+								"transaction",
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{L9092}}/v1/transaction/history/2?from=2025-07-16T22:46:34.000&to=2025-07-19T22:47:25.000",
+							"host": [
+								"{{L9092}}"
+							],
+							"path": [
+								"v1",
+								"transaction",
+								"history",
+								"2"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2025-07-16T22:46:34.000"
+								},
+								{
+									"key": "to",
+									"value": "2025-07-19T22:47:25.000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Every Transactional Endpoint"
+		},
+		{
+			"name": "Authentication-Service",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract token from the response and set it as an environment variable\r",
+									"const response = pm.response.json();\r",
+									"pm.environment.set(\"AuthSrvToken\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"liam@gmail.com\",\r\n    \"password\": \"password_rahasia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AuthSrv}}/auth/v1/login",
+							"host": [
+								"{{AuthSrv}}"
+							],
+							"path": [
+								"auth",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AuthSrv}}/auth/v1/mydata",
+							"host": [
+								"{{AuthSrv}}"
+							],
+							"path": [
+								"auth",
+								"v1",
+								"mydata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AuthSrv}}/auth/v1/profile",
+							"host": [
+								"{{AuthSrv}}"
+							],
+							"path": [
+								"auth",
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{AuthSrvToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
