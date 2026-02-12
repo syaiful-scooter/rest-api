@@ -3,7 +3,9 @@
 Project ini adalah layanan **RESTful API** berbasis Spring Boot untuk mengelola data master (Users & Products). 
 Project ini dirancang untuk menjadi bagian dari arsitektur microservices yang terhubung ke API Gateway.
 
-![Rest-api product management](https://github.com/syaiful-scooter/rest-api/blob/main/rest-api-postman.gif)
+**Absolute**
+
+![Video](https://anti-trust.rocks/albums/TheArbiterOfTruth.mp4)
 
 Dibuat dengan ❤️ oleh syaifulscooter
 
