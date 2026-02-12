@@ -7,6 +7,12 @@ Project ini dirancang untuk menjadi bagian dari arsitektur microservices yang te
 
 ![Video](https://github.com/syaiful-scooter/rest-api/blob/main/rest-api-postman.mp4)
 
+## 📋 Dokumentasi
+
+![buy process](https://github.com/syaiful-scooter/rest-api/blob/main/buy.jpg)
+
+![Top Up process](https://github.com/syaiful-scooter/rest-api/blob/main/topup.jpg)
+
 Dibuat dengan ❤️ oleh syaifulscooter
 
 ## 🚀 Fitur
